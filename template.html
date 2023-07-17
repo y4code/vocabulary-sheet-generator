@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        @media print {
+            .container {
+                column-count: 2;
+                column-gap: 20px;
+                orphans: 2;
+                widows: 2;
+            }
+
+            .word {
+                margin-bottom: 10px;
+                break-inside: avoid-column;
+            }
+        }
+        ol{
+            margin: 0 !important;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        {{ range . }}
+        <div class="word">
+            <b>{{.Name}}</b>
+            <span>{{.PhoneticSymbol}}</span>
+            <span>{{.Translation }}</span>
+        </div>
+        {{ end }}
+</body>
+
+</html>
